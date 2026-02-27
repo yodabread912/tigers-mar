@@ -19,9 +19,9 @@ export default function Hero() {
             <Link href="/projects" className="btn btn-primary">
               Explore our projects
             </Link>
-            <Link href="/contact" className="btn btn-ghost">
+            <a href="#contact-us" className="btn btn-ghost">
               Contact Us
-            </Link>
+            </a>
           </div>
         </div>
       </div>

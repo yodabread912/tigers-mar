@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 
 const WHY_CHOOSE_US = [
@@ -81,69 +78,7 @@ const OUR_PROCESS = [
   },
 ];
 
-const PROJECTS = [
-  {
-    id: 1,
-    name: "Project Name",
-    location: "Location",
-    area: "20m²",
-    status: "Complete",
-  },
-  {
-    id: 2,
-    name: "Project Name",
-    location: "Location",
-    area: "20m²",
-    status: "Complete",
-  },
-  {
-    id: 3,
-    name: "Project Name",
-    location: "Location",
-    area: "20m²",
-    status: "Complete",
-  },
-  {
-    id: 4,
-    name: "Project Name",
-    location: "Location",
-    area: "20m²",
-    status: "Complete",
-  },
-  {
-    id: 5,
-    name: "Project Name",
-    location: "Location",
-    area: "20m²",
-    status: "Complete",
-  },
-  {
-    id: 6,
-    name: "Project Name",
-    location: "Location",
-    area: "20m²",
-    status: "Complete",
-  },
-];
-
 export default function Home() {
-  const [showProjects, setShowProjects] = useState(false);
-
-  useEffect(() => {
-    const showSectionFromHash = () => {
-      if (window.location.hash === "#projects") {
-        setShowProjects(true);
-      }
-    };
-
-    showSectionFromHash();
-    window.addEventListener("hashchange", showSectionFromHash);
-
-    return () => {
-      window.removeEventListener("hashchange", showSectionFromHash);
-    };
-  }, []);
-
   return (
     <main className="min-h-screen bg-white text-gray-900">
       <Hero />
@@ -203,80 +138,140 @@ export default function Home() {
         </div>
       </section>
 
-      {showProjects && (
-        <section
-          id="projects"
-          className="projects"
-          aria-labelledby="projects-heading"
-        >
-          <div className="container projects-inner">
-            <h2 id="projects-heading" className="projects-title">
-              Projects
-            </h2>
-            <p className="projects-subtitle">
-              Showcasing our portfolio of successful construction projects
-              across the Philippines
+      <section
+        id="contact-us"
+        className="contact-section"
+        aria-labelledby="contact-heading"
+      >
+        <div className="container contact-inner">
+          <div className="contact-header">
+            <h2 id="contact-heading">Contact Us</h2>
+            <p>
+              Visit us at our headquarters or get in touch with our team
             </p>
-
-            <div className="projects-toolbar">
-              <div className="projects-search-wrap">
-                <input
-                  type="text"
-                  placeholder="Search Projects"
-                  className="projects-search"
-                  aria-label="Search projects"
-                />
-                <span className="projects-search-icon" aria-hidden="true">
-                  ⌕
-                </span>
-              </div>
-              <select className="projects-filter" aria-label="Filter projects">
-                <option>All Projects</option>
-              </select>
-            </div>
-
-            <div className="projects-grid">
-              {PROJECTS.map((project) => (
-                <article key={project.id} className="project-card">
-                  <div className="project-thumb" aria-hidden="true" />
-                  <div className="project-content">
-                    <h3>{project.name}</h3>
-                    <p className="project-location">◉ {project.location}</p>
-                    <p className="project-area">{project.area}</p>
-                    <span className="project-status">{project.status}</span>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <nav
-              className="projects-pagination"
-              aria-label="Projects pagination"
-            >
-              <button type="button" className="pager-link">
-                ← Previous
-              </button>
-              <button
-                type="button"
-                className="pager-number active"
-                aria-current="page"
-              >
-                1
-              </button>
-              <button type="button" className="pager-number">
-                2
-              </button>
-              <button type="button" className="pager-number">
-                3
-              </button>
-              <span className="pager-ellipsis">…</span>
-              <button type="button" className="pager-link">
-                Next →
-              </button>
-            </nav>
           </div>
-        </section>
-      )}
+
+          <div className="contact-grid">
+            <div className="contact-info">
+              <div className="contact-card">
+                <span className="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img" focusable="false">
+                    <path
+                      d="M12 3c-3.3 0-6 2.7-6 6 0 4.6 6 12 6 12s6-7.4 6-12c0-3.3-2.7-6-6-6z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <circle
+                      cx="12"
+                      cy="9"
+                      r="2.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </span>
+                <h3>Address</h3>
+                <p>
+                  Tigers Mark Corporation Building
+                  <br />
+                  17, Road 10 Visayas Ave, Quezon City,
+                  <br />
+                  1128 Metro Manila Philippines
+                </p>
+              </div>
+
+              <div className="contact-card">
+                <span className="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img" focusable="false">
+                    <path
+                      d="M6 3h12v18H6z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M10 7h4M10 11h4M10 15h4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </span>
+                <h3>Phone</h3>
+                <p>0917 623 1675</p>
+              </div>
+
+              <div className="contact-card">
+                <span className="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img" focusable="false">
+                    <rect
+                      x="3"
+                      y="5"
+                      width="18"
+                      height="14"
+                      rx="2"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M4 7l8 6 8-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </span>
+                <h3>Email</h3>
+                <p>sales@tigersmarkcorp.com</p>
+              </div>
+
+              <div className="contact-card">
+                <span className="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img" focusable="false">
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M12 7v5l3 2"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </span>
+                <h3>Business Hours</h3>
+                <p>
+                  Monday - Saturday: 8:00 AM - 6:00 PM
+                  <br />
+                  Sunday: Closed
+                </p>
+              </div>
+            </div>
+
+            <div className="contact-map">
+              <div className="map-frame" role="img" aria-label="Map preview" />
+              <div className="contact-socials" aria-label="Social links">
+                <span className="social-icon">X</span>
+                <span className="social-icon">IG</span>
+                <span className="social-icon">FB</span>
+                <span className="social-icon">IN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
+
+
+
