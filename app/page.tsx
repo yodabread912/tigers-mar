@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import ActivitiesCarousel from "./components/ActivitiesCarousel";
+import HomeTestimonials from "./components/HomeTestimonials";
 import Image from "next/image";
 
 const WHY_CHOOSE_US = [
@@ -353,15 +354,27 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      '"From planning to turnover, the team remained professional and transparent. Quality and schedule were both delivered beyond expectations."',
-    name: "A*** D*****",
-    company: "R**** Development",
+      '"Professional team, transparent communication, and remarkable attention to detail. Our residential project exceeded all expectations."',
+    name: "M**** T*****",
+    company: "******* Developments",
   },
   {
     quote:
-      '"Excellent coordination and workmanship across every phase. We appreciated their responsiveness and commitment to long-term value."',
-    name: "M**** P******",
-    company: "C****** Group",
+      '"From design to completion, Tigers Mark Corporation demonstrated excellence at every stage. Highly recommended for large-scale projects."',
+    name: "R***** P*****",
+    company: "********* Holdings",
+  },
+  {
+    quote:
+      '"Reliable construction partner with strong safety protocols. Their expertise in commercial projects is evident in the final results."',
+    name: "S***** L***",
+    company: "****** Properties",
+  },
+  {
+    quote:
+      '"Best construction company we\'ve worked with. They managed our complex project with professionalism and delivered exceptional results."',
+    name: "A******* R******",
+    company: "******** Enterprises",
   },
 ];
 
@@ -480,158 +493,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className="home-testimonials"
-        aria-labelledby="testimonials-heading"
-      >
-        <div className="container home-testimonials-inner">
-          <h2 id="testimonials-heading" className="home-testimonials-title">
-            Client Testimonials
-          </h2>
-          <p className="home-testimonials-subtitle">
-            What our clients say about working with Tigers Mark Corporation
-          </p>
-
-          <div className="home-testimonials-slider">
-            <input
-              className="home-testimonial-input"
-              type="radio"
-              name="home-testimonial"
-              id="testimonial-1"
-              defaultChecked
-            />
-            <input
-              className="home-testimonial-input"
-              type="radio"
-              name="home-testimonial"
-              id="testimonial-2"
-            />
-            <input
-              className="home-testimonial-input"
-              type="radio"
-              name="home-testimonial"
-              id="testimonial-3"
-            />
-
-            <div className="home-testimonial-panels">
-              {TESTIMONIALS.map((item, index) => (
-                <article
-                  key={`${item.name}-${index}`}
-                  className="home-testimonial-card"
-                >
-                  <p className="home-testimonial-stars" aria-label="Five stars">
-                    ★★★★★
-                  </p>
-                  <p className="home-testimonial-quote">{item.quote}</p>
-                  <p className="home-testimonial-name">{item.name}</p>
-                  <p className="home-testimonial-company">{item.company}</p>
-                </article>
-              ))}
-            </div>
-
-            <div
-              className="home-testimonial-nav"
-              aria-label="Previous and next testimonial"
-            >
-              <label
-                className="home-testimonial-btn prev prev-1"
-                htmlFor="testimonial-3"
-                aria-label="Previous testimonial"
-              >
-                <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <path
-                    d="M15 6l-6 6 6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                  />
-                </svg>
-              </label>
-              <label
-                className="home-testimonial-btn next next-1"
-                htmlFor="testimonial-2"
-                aria-label="Next testimonial"
-              >
-                <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <path
-                    d="M9 6l6 6-6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                  />
-                </svg>
-              </label>
-
-              <label
-                className="home-testimonial-btn prev prev-2"
-                htmlFor="testimonial-1"
-                aria-label="Previous testimonial"
-              >
-                <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <path
-                    d="M15 6l-6 6 6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                  />
-                </svg>
-              </label>
-              <label
-                className="home-testimonial-btn next next-2"
-                htmlFor="testimonial-3"
-                aria-label="Next testimonial"
-              >
-                <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <path
-                    d="M9 6l6 6-6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                  />
-                </svg>
-              </label>
-
-              <label
-                className="home-testimonial-btn prev prev-3"
-                htmlFor="testimonial-2"
-                aria-label="Previous testimonial"
-              >
-                <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <path
-                    d="M15 6l-6 6 6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                  />
-                </svg>
-              </label>
-              <label
-                className="home-testimonial-btn next next-3"
-                htmlFor="testimonial-1"
-                aria-label="Next testimonial"
-              >
-                <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <path
-                    d="M9 6l6 6-6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                  />
-                </svg>
-              </label>
-            </div>
-
-            <div
-              className="home-testimonial-dots"
-              aria-label="Testimonial navigation"
-            >
-              <label htmlFor="testimonial-1" aria-label="Show testimonial 1" />
-              <label htmlFor="testimonial-2" aria-label="Show testimonial 2" />
-              <label htmlFor="testimonial-3" aria-label="Show testimonial 3" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeTestimonials testimonials={TESTIMONIALS} />
 
       <section
         id="contact-us"
