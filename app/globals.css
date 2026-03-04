@@ -1455,7 +1455,17 @@ html {
   color: #f15a2a;
   font-size: 1.12rem;
   line-height: 1.2;
-  font-weight: 800;
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.18s ease;
+}
+
+.project-card-link:hover .project-content h3,
+.project-card-link:active .project-content h3,
+.project-card-link:focus-visible .project-content h3 {
+  border-bottom-color: #f15a2a;
 }
 
 .project-link {
@@ -2331,6 +2341,14 @@ html {
 .project-gallery-frame {
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.project-gallery-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .project-gallery-nav {
@@ -2376,15 +2394,20 @@ html {
   margin: 0 0 2rem;
   color: #f15a2a;
   font-size: clamp(1.5rem, 2.8vw, 2.1rem);
-  font-weight: 800;
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+  font-weight: 700;
   letter-spacing: 0.04em;
 }
 
 .project-info-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.1rem;
-  text-align: left;
+  text-align: center;
+  justify-items: center;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1.8rem;
 }
 
@@ -2404,9 +2427,7 @@ html {
 }
 
 .project-detail-body {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 2.2rem;
+  display: block;
   text-align: left;
 }
 
@@ -2417,28 +2438,13 @@ html {
   line-height: 1.65;
 }
 
-.project-detail-facts h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1rem;
-  color: #f15a2a;
-  text-transform: uppercase;
-}
-
-.project-detail-facts ul {
-  margin: 0;
-  padding-left: 1rem;
-  font-size: 0.95rem;
-  color: #4b5563;
-  line-height: 1.55;
-}
-
 @media (max-width: 900px) {
   .project-info-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-detail-body {
-    grid-template-columns: 1fr;
+    display: block;
   }
 }
 .project-back {

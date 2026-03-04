@@ -862,7 +862,17 @@ export default function ProjectsPage() {
             {visibleProjects.map((project) => (
               <Link
                 key={project.id}
-                href={`/projects/${project.id}`}
+                href={{
+                  pathname: `/projects/${project.id}`,
+                  query: {
+                    name: project.name,
+                    location: project.location,
+                    year: project.year,
+                    type: project.type,
+                    status: project.status,
+                    image: project.image ?? "",
+                  },
+                }}
                 className="project-card project-card-link"
               >
                 <div className="project-thumb">
