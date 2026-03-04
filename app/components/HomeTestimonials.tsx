@@ -16,8 +16,9 @@ export default function HomeTestimonials({
   testimonials,
 }: HomeTestimonialsProps) {
   const safeTestimonials = useMemo(
-    () => testimonials.filter((item) => item.quote && item.name && item.company),
-    [testimonials]
+    () =>
+      testimonials.filter((item) => item.quote && item.name && item.company),
+    [testimonials],
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,7 +39,10 @@ export default function HomeTestimonials({
   };
 
   return (
-    <section className="home-testimonials" aria-labelledby="testimonials-heading">
+    <section
+      className="home-testimonials"
+      aria-labelledby="testimonials-heading"
+    >
       <div className="container home-testimonials-inner">
         <h2 id="testimonials-heading" className="home-testimonials-title">
           Client Testimonials
@@ -95,7 +99,10 @@ export default function HomeTestimonials({
             </button>
           </div>
 
-          <div className="home-testimonial-dots" aria-label="Testimonial navigation">
+          <div
+            className="home-testimonial-dots"
+            aria-label="Testimonial navigation"
+          >
             {safeTestimonials.map((_, index) => (
               <button
                 key={`testimonial-dot-${index + 1}`}
