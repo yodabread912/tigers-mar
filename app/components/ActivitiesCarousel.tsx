@@ -44,8 +44,8 @@ export default function ActivitiesCarousel() {
               <div className="activity-thumb" aria-hidden="true">
                 <span className="activity-play" />
               </div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+              <h3 className="activity-card-title">{item.title}</h3>
+              <p className="activity-card-text">{item.text}</p>
             </article>
           ))}
         </div>
