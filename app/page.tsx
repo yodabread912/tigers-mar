@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import ActivitiesCarousel from "./components/ActivitiesCarousel";
+import Image from "next/image";
 
 const WHY_CHOOSE_US = [
   {
@@ -88,24 +89,13 @@ function WhyChooseIcon({ icon }: { icon: string }) {
       );
     case "quality":
       return (
-        <svg viewBox="0 0 24 24" role="img" focusable="false">
-          <path
-            d="M10 10V6.6c0-.9.7-1.6 1.6-1.6.6 0 1.2.4 1.5 1l.7 2H18c1 0 1.8.9 1.6 1.9l-1 6.2c-.1.8-.8 1.4-1.6 1.4H10"
-            fill="none"
-            stroke="#f15a2a"
-            strokeWidth="2"
-          />
-          <rect
-            x="4"
-            y="10"
-            width="5"
-            height="8"
-            rx="1.2"
-            fill="none"
-            stroke="#f15a2a"
-            strokeWidth="2"
-          />
-        </svg>
+        <Image
+          src="/home/quality-assurance.png"
+          alt=""
+          width={34}
+          height={34}
+          className="why-choose-icon-image"
+        />
       );
     case "team":
       return (

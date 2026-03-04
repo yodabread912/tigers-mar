@@ -456,6 +456,12 @@ html {
   stroke-linejoin: round;
 }
 
+.why-choose-icon .why-choose-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .why-choose-card h3 {
   margin: 0.75rem 0 0.5rem;
   font-size: 1rem;
@@ -1965,6 +1971,12 @@ html {
   height: 100%;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.service-icon .service-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .service-card h2 {
