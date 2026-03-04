@@ -1,55 +1,13 @@
 ﻿import Link from "next/link";
 
-const PROJECTS = [
-  {
-    id: "1",
-    name: "PROJECT NAME",
-    location: "Lorem Ipsum Lorem Ipsum",
-    client: "Lorem Ipsum Lorem Ipsum",
-    industries: "Lorem Ipsum Lorem Ipsum",
-    services: "Lorem Ipsum Lorem Ipsum",
-  },
-  {
-    id: "2",
-    name: "PROJECT NAME",
-    location: "Lorem Ipsum Lorem Ipsum",
-    client: "Lorem Ipsum Lorem Ipsum",
-    industries: "Lorem Ipsum Lorem Ipsum",
-    services: "Lorem Ipsum Lorem Ipsum",
-  },
-  {
-    id: "3",
-    name: "PROJECT NAME",
-    location: "Lorem Ipsum Lorem Ipsum",
-    client: "Lorem Ipsum Lorem Ipsum",
-    industries: "Lorem Ipsum Lorem Ipsum",
-    services: "Lorem Ipsum Lorem Ipsum",
-  },
-  {
-    id: "4",
-    name: "PROJECT NAME",
-    location: "Lorem Ipsum Lorem Ipsum",
-    client: "Lorem Ipsum Lorem Ipsum",
-    industries: "Lorem Ipsum Lorem Ipsum",
-    services: "Lorem Ipsum Lorem Ipsum",
-  },
-  {
-    id: "5",
-    name: "PROJECT NAME",
-    location: "Lorem Ipsum Lorem Ipsum",
-    client: "Lorem Ipsum Lorem Ipsum",
-    industries: "Lorem Ipsum Lorem Ipsum",
-    services: "Lorem Ipsum Lorem Ipsum",
-  },
-  {
-    id: "6",
-    name: "PROJECT NAME",
-    location: "Lorem Ipsum Lorem Ipsum",
-    client: "Lorem Ipsum Lorem Ipsum",
-    industries: "Lorem Ipsum Lorem Ipsum",
-    services: "Lorem Ipsum Lorem Ipsum",
-  },
-];
+const PROJECTS = Array.from({ length: 18 }, (_, index) => ({
+  id: String(index + 1),
+  name: `PROJECT NAME ${String(index + 1).padStart(2, "0")}`,
+  location: "Lorem Ipsum Lorem Ipsum",
+  client: "Lorem Ipsum Lorem Ipsum",
+  industries: "Lorem Ipsum Lorem Ipsum",
+  services: "Lorem Ipsum Lorem Ipsum",
+}));
 
 export default function ProjectDetailPage({
   params,

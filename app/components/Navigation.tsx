@@ -7,14 +7,13 @@ export default function Navigation() {
       <div className="container nav-inner">
         <Link href="/" className="nav-logo" aria-label="Tigers Mark home">
           <Image
-            src="/logo.svg"
+            src="/brand-logo.png"
             alt="Tigers Mark Corporation logo"
-            width={32}
-            height={32}
+            width={142}
+            height={51}
             className="nav-logo-image"
             priority
           />
-          <span className="nav-logo-text">Tigers Mark</span>
         </Link>
         <nav className="nav-links">
           <Link href="/">Home</Link>

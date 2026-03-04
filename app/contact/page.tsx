@@ -2,8 +2,23 @@
 
 import { useState } from "react";
 
+const QUOTE_PRODUCTS = Array.from({ length: 18 }, (_, index) => ({
+  id: index + 1,
+  name: `Product Name ${String(index + 1).padStart(2, "0")}`,
+  badge: "Lorem",
+}));
+
+const ITEMS_PER_PAGE = 6;
+
 export default function QuotePage() {
   const [open, setOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(QUOTE_PRODUCTS.length / ITEMS_PER_PAGE);
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const visibleProducts = QUOTE_PRODUCTS.slice(start, start + ITEMS_PER_PAGE);
+  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+
   return (
     <div className="quote-page">
       <section className="quote-hero">
@@ -24,13 +39,13 @@ export default function QuotePage() {
 
       <section className="quote-catalog">
         <div className="container quote-grid">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <article className="quote-card" key={`product-${index}`}>
+          {visibleProducts.map((product) => (
+            <article className="quote-card" key={`product-${product.id}`}>
               <div className="quote-thumb">
-                <span className="quote-badge">Lorem</span>
+                <span className="quote-badge">{product.badge}</span>
               </div>
               <div className="quote-content">
-                <h2 className="quote-name">Product Name</h2>
+                <h2 className="quote-name">{product.name}</h2>
                 <p className="quote-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Aenean commodo ligula eget dolor. Aenean massa.
@@ -44,22 +59,37 @@ export default function QuotePage() {
           ))}
         </div>
 
-        <div className="container quote-pagination">
-          <button className="quote-page-btn" type="button">
-            &lt; Previous
+        <div className="container projects-pagination">
+          <button
+            className="pager-link"
+            type="button"
+            onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+            disabled={currentPage === 1}
+          >
+            Previous
           </button>
-          <button className="quote-page-btn is-active" type="button">
-            1
-          </button>
-          <button className="quote-page-btn" type="button">
-            2
-          </button>
-          <button className="quote-page-btn" type="button">
-            3
-          </button>
-          <span className="quote-page-dots">...</span>
-          <button className="quote-page-btn" type="button">
-            Next &gt;
+
+          {pageNumbers.map((page) => (
+            <button
+              key={page}
+              className={`pager-number ${currentPage === page ? "active" : ""}`}
+              type="button"
+              onClick={() => setCurrentPage(page)}
+              aria-current={currentPage === page ? "page" : undefined}
+            >
+              {page}
+            </button>
+          ))}
+
+          <button
+            className="pager-link"
+            type="button"
+            onClick={() =>
+              setCurrentPage((page) => Math.min(totalPages, page + 1))
+            }
+            disabled={currentPage === totalPages}
+          >
+            Next
           </button>
         </div>
       </section>

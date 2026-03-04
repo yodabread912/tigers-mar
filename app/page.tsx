@@ -1,80 +1,401 @@
 import Hero from "./components/Hero";
+import ActivitiesCarousel from "./components/ActivitiesCarousel";
 
 const WHY_CHOOSE_US = [
   {
-    icon: "🛡️",
+    icon: "safety",
     title: "Safety First",
     description:
       "Stringent safety protocols and zero-compromise approach to worker and site safety.",
   },
   {
-    icon: "🏅",
+    icon: "recognition",
     title: "Industry Recognition",
     description:
       "Multiple awards and certifications recognizing our commitment to excellence.",
   },
   {
-    icon: "🕒",
+    icon: "time",
     title: "On-time Delivery",
     description:
       "99% of our projects completed on or ahead of schedule with meticulous planning.",
   },
   {
-    icon: "👍",
+    icon: "quality",
     title: "Quality Assurance",
     description:
       "Rigorous quality control at every stage ensuring superior construction standards.",
   },
   {
-    icon: "🧰",
+    icon: "team",
     title: "Expert Team",
     description:
       "Highly skilled engineers, architects, and construction professionals at your service.",
   },
   {
-    icon: "✅",
-    title: "On-time Delivery",
+    icon: "success",
+    title: "Proven Track Record",
     description:
       "13+ years of successful project delivery across diverse construction sectors.",
   },
 ];
 
+function WhyChooseIcon({ icon }: { icon: string }) {
+  switch (icon) {
+    case "safety":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path
+            d="M12 3l7 3v5c0 4.4-2.9 8.3-7 9.6C7.9 19.3 5 15.4 5 11V6l7-3z"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+        </svg>
+      );
+    case "recognition":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <circle
+            cx="12"
+            cy="8"
+            r="4"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+          <path
+            d="M9 12.5l-1 7 4-2.2 4 2.2-1-7"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+        </svg>
+      );
+    case "time":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+          <path d="M12 7v5l3 2" fill="none" stroke="#f15a2a" strokeWidth="2" />
+        </svg>
+      );
+    case "quality":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path
+            d="M10 10V6.6c0-.9.7-1.6 1.6-1.6.6 0 1.2.4 1.5 1l.7 2H18c1 0 1.8.9 1.6 1.9l-1 6.2c-.1.8-.8 1.4-1.6 1.4H10"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+          <rect
+            x="4"
+            y="10"
+            width="5"
+            height="8"
+            rx="1.2"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+        </svg>
+      );
+    case "team":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <rect
+            x="3"
+            y="7"
+            width="18"
+            height="13"
+            rx="2"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+          <path d="M9 7V5h6v2" fill="none" stroke="#f15a2a" strokeWidth="2" />
+          <path d="M3 13h18" fill="none" stroke="#f15a2a" strokeWidth="2" />
+        </svg>
+      );
+    default:
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+          <path
+            d="M8 12l2.6 2.6L16 9"
+            fill="none"
+            stroke="#f15a2a"
+            strokeWidth="2"
+          />
+        </svg>
+      );
+  }
+}
+
 const OUR_PROCESS = [
   {
-    icon: "📋",
+    icon: "feasibility",
     title: "Feasibility Study",
     description:
       "We assess your vision, requirements, and budget to determine the project's viability.",
   },
   {
-    icon: "✏️",
+    icon: "design",
     title: "Design Development",
     description:
       "Our team prepares detailed plans and 3D visualizations to bring your ideas to life.",
   },
   {
-    icon: "👷",
+    icon: "permit",
     title: "LGU Permit",
     description:
       "We manage all local government permits and approvals to ensure full compliance.",
   },
   {
-    icon: "🏠",
+    icon: "construction",
     title: "Construction Phase",
     description:
       "Our skilled professionals deliver high-quality workmanship with precision and care.",
   },
   {
-    icon: "🔑",
+    icon: "handover",
     title: "Project Handover",
     description:
       "We conduct final inspections to guarantee quality before officially turning over the project.",
   },
   {
-    icon: "🛠️",
+    icon: "post",
     title: "Post-Construction",
     description:
       "We provide ongoing assistance and maintenance to ensure long-term satisfaction.",
+  },
+];
+
+function ProcessIcon({ icon }: { icon: string }) {
+  switch (icon) {
+    case "feasibility":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <rect
+            x="6"
+            y="4"
+            width="12"
+            height="16"
+            rx="1.8"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M9 8h6M9 12h6M9 16h4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path d="M14 3v3" fill="none" stroke="currentColor" strokeWidth="2" />
+        </svg>
+      );
+    case "design":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path
+            d="M4 16.5L15.7 4.8l3.5 3.5L7.5 20H4v-3.5z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M13.7 6.8l3.5 3.5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+        </svg>
+      );
+    case "permit":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path
+            d="M4 20h16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M6 13l2-5h8l2 5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M9 8V6.8c0-1.7 1.3-3 3-3s3 1.3 3 3V8"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M12 13v3"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+        </svg>
+      );
+    case "construction":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path
+            d="M4 11l8-7 8 7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M6 10v10h12V10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M10 20v-6h4v6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+        </svg>
+      );
+    case "handover":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <circle
+            cx="8"
+            cy="12"
+            r="3"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M11 12h8M16 12v2M18 12v2"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+        </svg>
+      );
+    case "post":
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path
+            d="M14 5a4 4 0 0 0 5 5l-3.2 3.2-5-5L14 5z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M11.2 9.8L6.1 14.9a2.2 2.2 0 0 0 3.1 3.1l5.1-5.1"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <circle cx="7.7" cy="16.3" r="0.8" fill="currentColor" />
+        </svg>
+      );
+    default:
+      return (
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <circle
+            cx="12"
+            cy="12"
+            r="8.5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path d="M12 8v5" fill="none" stroke="currentColor" strokeWidth="2" />
+          <circle
+            cx="12"
+            cy="16.8"
+            r="0.6"
+            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+        </svg>
+      );
+  }
+}
+
+const FAQ_ITEMS = [
+  {
+    question: "What is Tiger’s Mark Corporation?",
+    answer:
+      "Tiger’s Mark Corporation is a premier Philippine construction firm specializing in end-to-end construction services and premium material supply. We engineer dreams and build legacies — transforming blueprints into enduring structures with precision, integrity, and innovation.",
+  },
+  {
+    question: "What Construction services does tiger’s mark corporation offer?",
+    answer:
+      "We provide end-to-end services including planning, design coordination, permit processing, construction execution, and post-construction support for residential and commercial developments.",
+  },
+  {
+    question: "What types of Construction projects do you Undertake?",
+    answer:
+      "We undertake residential homes, commercial spaces, fit-outs, structural upgrades, and design-build projects across multiple sectors.",
+  },
+  {
+    question: "What Construction Materials do you supply?",
+    answer:
+      "We supply selected construction materials aligned with project specifications, quality standards, and budget requirements.",
+  },
+  {
+    question: "Do you handle both residential and commercial projects?",
+    answer:
+      "Yes. Our team handles both residential and commercial projects, with solutions tailored to each project’s scope and technical requirements.",
+  },
+  {
+    question: "How can I request a quote?",
+    answer:
+      "You can request a quote through our Contact Us section by sending your project details, location, and target timeline so our team can prepare a proposal.",
+  },
+  {
+    question: "What types of Construction projects do you Undertake?",
+    answer:
+      "We can support new builds, renovations, and specialized construction packages depending on project needs.",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    quote:
+      '"Reliable construction partner with strong safety protocols. Their expertise in commercial projects is evident in the final results."',
+    name: "J** M******",
+    company: "S******* Holdings",
+  },
+  {
+    quote:
+      '"From planning to turnover, the team remained professional and transparent. Quality and schedule were both delivered beyond expectations."',
+    name: "A*** D*****",
+    company: "R**** Development",
+  },
+  {
+    quote:
+      '"Excellent coordination and workmanship across every phase. We appreciated their responsiveness and commitment to long-term value."',
+    name: "M**** P******",
+    company: "C****** Group",
   },
 ];
 
@@ -102,7 +423,7 @@ export default function Home() {
                 className="why-choose-card"
               >
                 <span className="why-choose-icon" aria-hidden="true">
-                  {item.icon}
+                  <WhyChooseIcon icon={item.icon} />
                 </span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
@@ -128,12 +449,220 @@ export default function Home() {
             {OUR_PROCESS.map((step) => (
               <article key={step.title} className="process-card">
                 <span className="process-icon" aria-hidden="true">
-                  {step.icon}
+                  <ProcessIcon icon={step.icon} />
                 </span>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="activities" aria-labelledby="activities-heading">
+        <div className="container activities-inner">
+          <h2 id="activities-heading" className="activities-title">
+            Activities
+          </h2>
+          <p className="activities-subtitle">
+            Experience Tigers Mark in action through our project highlights and
+            team moments
+          </p>
+
+          <ActivitiesCarousel />
+        </div>
+      </section>
+
+      <section className="home-faq" aria-labelledby="faq-heading">
+        <div className="container home-faq-inner">
+          <h2 id="faq-heading" className="home-faq-title">
+            Frequently Asked Questions
+          </h2>
+          <p className="home-faq-subtitle">
+            Find answers to common questions about our services and company
+          </p>
+
+          <div className="home-faq-list">
+            {FAQ_ITEMS.map((item, index) => (
+              <details
+                key={`${item.question}-${index}`}
+                className="home-faq-item"
+                open={index === 0}
+              >
+                <summary>
+                  <span className="home-faq-left">
+                    <span className="home-faq-icon" aria-hidden="true">
+                      ?
+                    </span>
+                    <span className="home-faq-question">{item.question}</span>
+                  </span>
+                  <span className="home-faq-chevron" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" focusable="false">
+                      <path
+                        d="M6 9l6 6 6-6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </span>
+                </summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="home-testimonials"
+        aria-labelledby="testimonials-heading"
+      >
+        <div className="container home-testimonials-inner">
+          <h2 id="testimonials-heading" className="home-testimonials-title">
+            Client Testimonials
+          </h2>
+          <p className="home-testimonials-subtitle">
+            What our clients say about working with Tigers Mark Corporation
+          </p>
+
+          <div className="home-testimonials-slider">
+            <input
+              className="home-testimonial-input"
+              type="radio"
+              name="home-testimonial"
+              id="testimonial-1"
+              defaultChecked
+            />
+            <input
+              className="home-testimonial-input"
+              type="radio"
+              name="home-testimonial"
+              id="testimonial-2"
+            />
+            <input
+              className="home-testimonial-input"
+              type="radio"
+              name="home-testimonial"
+              id="testimonial-3"
+            />
+
+            <div className="home-testimonial-panels">
+              {TESTIMONIALS.map((item, index) => (
+                <article
+                  key={`${item.name}-${index}`}
+                  className="home-testimonial-card"
+                >
+                  <p className="home-testimonial-stars" aria-label="Five stars">
+                    ★★★★★
+                  </p>
+                  <p className="home-testimonial-quote">{item.quote}</p>
+                  <p className="home-testimonial-name">{item.name}</p>
+                  <p className="home-testimonial-company">{item.company}</p>
+                </article>
+              ))}
+            </div>
+
+            <div
+              className="home-testimonial-nav"
+              aria-label="Previous and next testimonial"
+            >
+              <label
+                className="home-testimonial-btn prev prev-1"
+                htmlFor="testimonial-3"
+                aria-label="Previous testimonial"
+              >
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <path
+                    d="M15 6l-6 6 6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </label>
+              <label
+                className="home-testimonial-btn next next-1"
+                htmlFor="testimonial-2"
+                aria-label="Next testimonial"
+              >
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <path
+                    d="M9 6l6 6-6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </label>
+
+              <label
+                className="home-testimonial-btn prev prev-2"
+                htmlFor="testimonial-1"
+                aria-label="Previous testimonial"
+              >
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <path
+                    d="M15 6l-6 6 6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </label>
+              <label
+                className="home-testimonial-btn next next-2"
+                htmlFor="testimonial-3"
+                aria-label="Next testimonial"
+              >
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <path
+                    d="M9 6l6 6-6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </label>
+
+              <label
+                className="home-testimonial-btn prev prev-3"
+                htmlFor="testimonial-2"
+                aria-label="Previous testimonial"
+              >
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <path
+                    d="M15 6l-6 6 6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </label>
+              <label
+                className="home-testimonial-btn next next-3"
+                htmlFor="testimonial-1"
+                aria-label="Next testimonial"
+              >
+                <svg viewBox="0 0 24 24" role="img" focusable="false">
+                  <path
+                    d="M9 6l6 6-6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </label>
+            </div>
+
+            <div
+              className="home-testimonial-dots"
+              aria-label="Testimonial navigation"
+            >
+              <label htmlFor="testimonial-1" aria-label="Show testimonial 1" />
+              <label htmlFor="testimonial-2" aria-label="Show testimonial 2" />
+              <label htmlFor="testimonial-3" aria-label="Show testimonial 3" />
+            </div>
           </div>
         </div>
       </section>
@@ -146,9 +675,7 @@ export default function Home() {
         <div className="container contact-inner">
           <div className="contact-header">
             <h2 id="contact-heading">Contact Us</h2>
-            <p>
-              Visit us at our headquarters or get in touch with our team
-            </p>
+            <p>Visit us at our headquarters or get in touch with our team</p>
           </div>
 
           <div className="contact-grid">
@@ -268,10 +795,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
-
-
-

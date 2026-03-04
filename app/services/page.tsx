@@ -104,31 +104,25 @@ export default function ServicesPage() {
             <span className="service-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" role="img" focusable="false">
                 <path
-                  d="M14.5 5.5l4 4"
+                  d="m15 12-8.5 8.5a1.5 1.5 0 1 1-2.121-2.121L13 9.757"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                 />
                 <path
-                  d="M4 20l6.5-6.5"
+                  d="M14 8.5 16.5 6a2.121 2.121 0 1 0-3-3L11 5.5"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                 />
                 <path
-                  d="M9 6l9 9"
+                  d="m9 7 8 8"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                 />
                 <path
-                  d="M7 8l2 2"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M6.2 16.8L3.8 19.2"
+                  d="m5 12 8 8"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -186,19 +180,7 @@ export default function ServicesPage() {
             <span className="service-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" role="img" focusable="false">
                 <path
-                  d="M14.5 7.5l2 2"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M5.5 18.5l7.7-7.7 2.8 2.8-7.7 7.7H5.5v-2.8z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M12.3 11.7l-1.8-1.8"
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0L22 7a6 6 0 0 1-7.84 7.84l-6.91 6.91a2 2 0 1 1-2.83-2.83l6.91-6.91A6 6 0 0 1 14.7 6.3z"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"

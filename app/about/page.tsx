@@ -32,13 +32,13 @@
             <div>
               <h2 className="about-item-title">Vision</h2>
               <p className="about-item-text">
-                Tiger&apos;s Mark Corporation is resolute in providing value-added
-                construction and procurement services to our customers by
-                providing quality workmanship, customer service and maintaining
-                the highest level of professionalism and fairness in our
-                relationships with our customers, vendors and employees. We seek
-                to become a valued supply partner of global brands to bridge the
-                gap of construction materials and equipment locally.
+                Tiger&apos;s Mark Corporation is resolute in providing
+                value-added construction and procurement services to our
+                customers by providing quality workmanship, customer service and
+                maintaining the highest level of professionalism and fairness in
+                our relationships with our customers, vendors and employees. We
+                seek to become a valued supply partner of global brands to
+                bridge the gap of construction materials and equipment locally.
               </p>
             </div>
           </article>
@@ -71,8 +71,20 @@
             <article className="core-value-card">
               <span className="core-value-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
-                  <path d="M7 21h10l-1-6H8l-1 6z" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <circle
+                    cx="12"
+                    cy="8"
+                    r="4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M7 21h10l-1-6H8l-1 6z"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
               </span>
               <h3>Excellence</h3>
@@ -85,19 +97,30 @@
             <article className="core-value-card">
               <span className="core-value-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <path
+                    d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
               </span>
               <h3>Integrity</h3>
               <p>
-                We seek to act with integrity and accountability for our actions.
+                We seek to act with integrity and accountability for our
+                actions.
               </p>
             </article>
 
             <article className="core-value-card">
               <span className="core-value-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img" focusable="false">
-                  <path d="M12 3l2.2 4.6L19 8l-3.5 3.4.9 4.9L12 13.8 7.6 16.3l.9-4.9L5 8l4.8-.4L12 3z" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <path
+                    d="M12 3l2.2 4.6L19 8l-3.5 3.4.9 4.9L12 13.8 7.6 16.3l.9-4.9L5 8l4.8-.4L12 3z"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
               </span>
               <h3>Innovation</h3>
@@ -110,38 +133,6 @@
         </div>
       </section>
 
-      <section className="activities" aria-labelledby="activities-heading">
-        <div className="container activities-inner">
-          <h2 id="activities-heading" className="activities-title">
-            Activities
-          </h2>
-          <p className="activities-subtitle">
-            Experience Tigers Mark in action through our project highlights and
-            team moments
-          </p>
-
-          <div className="activities-grid">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <article className="activity-card" key={`activity-${index}`}>
-                <div className="activity-thumb" aria-hidden="true">
-                  <span className="activity-play" />
-                </div>
-                <h3>Video Showcase</h3>
-                <p>Lorem Ipsum Lorem Ipsum</p>
-              </article>
-            ))}
-            <button className="activities-next" type="button" aria-label="Next video">
-              →
-            </button>
-          </div>
-
-          <div className="activities-dots" aria-hidden="true">
-            <span className="active" />
-            <span />
-            <span />
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

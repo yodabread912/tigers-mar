@@ -1,8 +1,21 @@
 import Link from "next/link";
 
+const HERO_STATS = [
+  { value: "3,188+", label: "Visitors" },
+  { value: "13+", label: "Years of Experience" },
+  { value: "500+", label: "Projects Completed" },
+  { value: "99%", label: "Client Satisfaction" },
+];
+
 export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
+      <div className="hero-bg" aria-hidden="true">
+        <div className="hero-bg-slide hero-bg-slide-1" />
+        <div className="hero-bg-slide hero-bg-slide-2" />
+        <div className="hero-bg-slide hero-bg-slide-3" />
+      </div>
+
       <div className="container hero-inner">
         <div className="hero-copy">
           <div className="hero-content">
@@ -23,6 +36,15 @@ export default function Hero() {
               Contact Us
             </a>
           </div>
+        </div>
+
+        <div className="hero-stats" aria-label="Company highlights">
+          {HERO_STATS.map((stat) => (
+            <div key={stat.label} className="hero-stat">
+              <p className="hero-stat-value">{stat.value}</p>
+              <p className="hero-stat-label">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
