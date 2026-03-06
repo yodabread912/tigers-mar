@@ -1,4 +1,5 @@
 ﻿import Image from "next/image";
+import AboutExperienceVideos from "../components/AboutExperienceVideos";
 
 export default function AboutPage() {
   return (
@@ -146,6 +147,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <AboutExperienceVideos />
     </main>
   );
 }

@@ -2,10 +2,30 @@
 
 import { useState } from "react";
 
+const PRODUCT_NAMES = [
+  "Roofing Solutions",
+  "Roofing Pipes",
+  "HDPE Solid Pipes",
+  "Structured Wall Pipes",
+  "Gabion Systems",
+  "UPVC Ceiling Panels",
+];
+
+const PRODUCT_BADGES = [
+  "Weather Shield",
+  "Corrosion Resistant",
+  "High Pressure",
+  "Cost Efficient",
+  "Eco-Friendly",
+  "Moisture Proof",
+];
+
 const QUOTE_PRODUCTS = Array.from({ length: 18 }, (_, index) => ({
   id: index + 1,
-  name: `Product Name ${String(index + 1).padStart(2, "0")}`,
-  badge: "Lorem",
+  name:
+    PRODUCT_NAMES[index] ??
+    `Product Name ${String(index + 1).padStart(2, "0")}`,
+  badge: PRODUCT_BADGES[index] ?? "Lorem",
 }));
 
 const ITEMS_PER_PAGE = 6;

@@ -3,7 +3,8 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container">
         <p>
-          © {new Date().getFullYear()} Tiger&apos;s Mark Corp. All rights reserved.
+          © {new Date().getFullYear()} Tiger&apos;s Mark Corp. All rights
+          reserved.
         </p>
       </div>
     </footer>
