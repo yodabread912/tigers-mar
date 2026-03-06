@@ -12,6 +12,9 @@ const activities = Array.from({ length: 6 }, (_, index) => ({
 export default function ActivitiesCarousel() {
   const [activePage, setActivePage] = useState(0);
   const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [pausedActivities, setPausedActivities] = useState<
+    Record<number, boolean>
+  >({});
   const totalPages = Math.ceil(activities.length / PAGE_SIZE);
   const start = activePage * PAGE_SIZE;
   const visibleActivities = activities.slice(start, start + PAGE_SIZE);
@@ -29,6 +32,13 @@ export default function ActivitiesCarousel() {
     setActivePage((current) => Math.min(totalPages - 1, current + 1));
   };
 
+  const toggleActivityPlayback = (index: number) => {
+    setPausedActivities((current) => ({
+      ...current,
+      [index]: !current[index],
+    }));
+  };
+
   return (
     <>
       <div className="activities-grid-wrap">
@@ -36,18 +46,35 @@ export default function ActivitiesCarousel() {
           className={`activities-grid activities-grid-swipe activities-grid-swipe-${direction}`}
           key={`activities-page-${activePage}-${direction}`}
         >
-          {visibleActivities.map((item, index) => (
-            <article
-              className={`activity-card activity-card-swipe activity-card-swipe-${direction}`}
-              key={`activity-${activePage}-${index}`}
-            >
-              <div className="activity-thumb" aria-hidden="true">
-                <span className="activity-play" />
-              </div>
-              <h3 className="activity-card-title">{item.title}</h3>
-              <p className="activity-card-text">{item.text}</p>
-            </article>
-          ))}
+          {visibleActivities.map((item, index) => {
+            const activityIndex = start + index;
+            const isPaused = Boolean(pausedActivities[activityIndex]);
+
+            return (
+              <article
+                className={`activity-card activity-card-swipe activity-card-swipe-${direction}`}
+                key={`activity-${activePage}-${index}`}
+              >
+                <button
+                  type="button"
+                  className="activity-thumb activity-thumb-btn"
+                  aria-label={
+                    isPaused
+                      ? `Play ${item.title} preview`
+                      : `Pause ${item.title} preview`
+                  }
+                  onClick={() => toggleActivityPlayback(activityIndex)}
+                >
+                  <span
+                    className={`activity-play${isPaused ? " is-paused" : ""}`}
+                    aria-hidden="true"
+                  />
+                </button>
+                <h3 className="activity-card-title">{item.title}</h3>
+                <p className="activity-card-text">{item.text}</p>
+              </article>
+            );
+          })}
         </div>
 
         <button

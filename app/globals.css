@@ -1668,21 +1668,30 @@ html {
   padding: 0 0 0.9rem;
   text-align: left;
   overflow: hidden;
-  min-height: 320px;
+  min-height: 0;
 }
 
 .activity-thumb {
   background: #d9d9d9;
-  height: 260px;
+  aspect-ratio: 9 / 15;
+  min-height: 420px;
+  max-height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.activity-thumb-btn {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
 .activity-play {
-  width: 34px;
-  height: 34px;
-  border: 2px solid #1f2937;
+  width: 72px;
+  height: 72px;
+  background: #0b2a56;
   border-radius: 999px;
   position: relative;
 }
@@ -1690,13 +1699,37 @@ html {
 .activity-play::after {
   content: "";
   position: absolute;
-  left: 12px;
-  top: 9px;
+  left: 31px;
+  top: 22px;
   width: 0;
   height: 0;
-  border-left: 8px solid #1f2937;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
+  border-left: 16px solid #ffffff;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+}
+
+.activity-play::before {
+  content: "";
+  display: none;
+  position: absolute;
+}
+
+.activity-play.is-paused::before,
+.activity-play.is-paused::after {
+  display: block;
+  top: 20px;
+  width: 8px;
+  height: 30px;
+  border: 0;
+  background: #ffffff;
+}
+
+.activity-play.is-paused::before {
+  left: 24px;
+}
+
+.activity-play.is-paused::after {
+  left: 40px;
 }
 
 .activity-card .activity-card-title {
@@ -1784,6 +1817,40 @@ html {
     grid-template-columns: 1fr;
   }
 
+  .activity-thumb {
+    aspect-ratio: 9 / 16;
+    min-height: 460px;
+    max-height: 560px;
+  }
+
+  .activity-play {
+    width: 68px;
+    height: 68px;
+  }
+
+  .activity-play::after {
+    left: 29px;
+    top: 21px;
+    border-left-width: 15px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+  }
+
+  .activity-play.is-paused::before,
+  .activity-play.is-paused::after {
+    top: 19px;
+    width: 7px;
+    height: 28px;
+  }
+
+  .activity-play.is-paused::before {
+    left: 23px;
+  }
+
+  .activity-play.is-paused::after {
+    left: 38px;
+  }
+
   .activities-next {
     position: static;
     transform: none;
@@ -1797,6 +1864,7 @@ html {
     justify-self: center;
     margin-top: 0.8rem;
   }
+
 }
 
 /* Projects */
