@@ -203,8 +203,8 @@ iframe {
     inset 0 1px 0 rgba(255, 255, 255, 0.75),
     inset 0 -8px 22px rgba(255, 255, 255, 0.22),
     0 8px 20px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(14px) saturate(120%);
   -webkit-backdrop-filter: blur(14px) saturate(120%);
+  backdrop-filter: blur(14px) saturate(120%);
 }
 
 .hero-stat-value {
@@ -423,7 +423,16 @@ iframe {
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 0.2rem;
-    scrollbar-width: thin;
+    /* scrollbar-width: thin; */
+    /* For Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      height: 6px;
+      background: #f3f4f6;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #d6d6d6;
+      border-radius: 4px;
+    }
   }
 
   .nav-links a {
@@ -855,6 +864,7 @@ iframe {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
   padding: 0;
 }
