@@ -229,7 +229,7 @@ iframe {
   flex-direction: row;
   gap: 1.5rem;
   white-space: nowrap;
-  margin-top: 3.8rem;
+  margin-top: 2.6rem;
   align-items: center;
 }
 
@@ -290,7 +290,7 @@ iframe {
   }
   .hero-copy {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
   }
   .hero-ctas {
     margin-top: 0;
@@ -310,6 +310,7 @@ iframe {
 
   .hero-copy {
     align-items: center;
+    gap: 0.5rem;
   }
 
   .hero-stat {
@@ -329,7 +330,7 @@ iframe {
     align-items: center;
     width: auto;
     max-width: 100%;
-    margin: 2rem auto 0 auto !important;
+    margin: 0.35rem auto 0 auto !important;
     padding: 0 1rem;
   }
 
