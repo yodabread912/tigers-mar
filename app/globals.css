@@ -2791,8 +2791,8 @@ iframe {
 
 .map-frame {
   width: 100%;
-  max-width: 380px;
-  height: 230px;
+  max-width: 560px;
+  height: 360px;
   display: block;
   border: 0;
   border-radius: 10px;
