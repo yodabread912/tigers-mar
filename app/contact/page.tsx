@@ -7,6 +7,7 @@ const QUOTE_PRODUCTS = [
     id: 1,
     name: "Roofing Solutions",
     badge: "Weather Shield",
+    image: "/quote/steel-roof.jpg",
     description:
       "Protective roofing systems designed for thermal efficiency, durability, and superior water resistance.",
     features: [
@@ -21,6 +22,7 @@ const QUOTE_PRODUCTS = [
     id: 2,
     name: "Roofing Pipes",
     badge: "Corrosion Resistant",
+    image: "/quote/roofing-pipes.jpg",
     description:
       "Lightweight, durable plastic pipes ideal for plumbing and drainage systems. Resistant to chemicals, rust, and scaling.",
     features: [
@@ -35,6 +37,7 @@ const QUOTE_PRODUCTS = [
     id: 3,
     name: "HDPE Solid Pipes",
     badge: "High Pressure",
+    image: "/quote/hdpe-solid-pipes.jpg",
     description:
       "Made from high-density polyethylene, these solid pipes offer exceptional strength and flexibility for pressurized fluid transport.",
     features: [
@@ -49,6 +52,7 @@ const QUOTE_PRODUCTS = [
     id: 4,
     name: "Structured Wall Pipes",
     badge: "Cost Efficient",
+    image: "/quote/wall-pipes.jpg",
     description:
       "Spirally wound, lightweight pipes with optimized strength for drainage, sewage, and utility applications.",
     features: [
@@ -126,6 +130,14 @@ export default function QuotePage() {
           {visibleProducts.map((product) => (
             <article className="quote-card" key={`product-${product.id}`}>
               <div className="quote-thumb">
+                {product.image && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="quote-thumb-img"
+                  />
+                )}
                 <span className="quote-badge">{product.badge}</span>
               </div>
               <div className="quote-content">
