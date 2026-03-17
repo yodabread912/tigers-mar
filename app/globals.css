@@ -2660,10 +2660,15 @@ iframe {
   font-size: clamp(1.2rem, 1.45vw, 1.42rem);
   font-weight: 700;
   color: #222222;
+  transition: color 0.2s ease;
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 1.5px;
   text-align: left;
+}
+
+.service-card:hover h2 {
+  color: #f15a2a;
 }
 
 .service-card p {
