@@ -612,12 +612,42 @@ export default function Home() {
             </div>
 
             <div className="contact-map">
-              <div className="map-frame" role="img" aria-label="Map preview" />
+              <iframe
+                className="map-frame"
+                title="Tigers Mark Corporation location"
+                src="https://www.google.com/maps?q=14.6585379,121.0445913&z=17&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
               <div className="contact-socials" aria-label="Social links">
-                <span className="social-icon">X</span>
-                <span className="social-icon">IG</span>
-                <span className="social-icon">FB</span>
-                <span className="social-icon">IN</span>
+                <a
+                  className="social-icon"
+                  href="https://www.instagram.com/tigersmarkcorp?igsh=MWxsdXozdHFrcmpzNg%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  IG
+                </a>
+                <a
+                  className="social-icon"
+                  href="https://www.facebook.com/watch/tigersmarkcorp/?ref=embed_video"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  FB
+                </a>
+                <a
+                  className="social-icon"
+                  href="https://www.linkedin.com/company/tigersmarkcorp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  IN
+                </a>
               </div>
             </div>
           </div>

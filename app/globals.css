@@ -1660,7 +1660,8 @@ iframe {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
-  align-items: center;
+  align-items: start;
+  justify-items: center;
 }
 
 .activities-grid-swipe {
@@ -1750,16 +1751,24 @@ iframe {
   text-align: left;
   overflow: hidden;
   min-height: 0;
+  width: min(100%, 340px);
 }
 
 .activity-thumb {
   background: #d9d9d9;
-  aspect-ratio: 9 / 15;
-  min-height: 420px;
-  max-height: 520px;
+  aspect-ratio: 9 / 16;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.activity-embed {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 .activity-thumb-btn {
@@ -1868,29 +1877,30 @@ iframe {
 
 .activities-dots {
   display: inline-flex;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 0.55rem;
   margin-top: 1rem;
 }
 
-.activities-dots span,
 .activities-dots button {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
   background: #0b2a56;
-  opacity: 0.4;
-}
-
-.activities-dots button {
+  opacity: 0.35;
   border: none;
   padding: 0;
   cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
-.activities-dots span.active,
 .activities-dots button.active {
   background: #f15a2a;
   opacity: 1;
+  transform: scale(1.05);
 }
 
 @media (max-width: 980px) {
@@ -1898,10 +1908,8 @@ iframe {
     grid-template-columns: 1fr;
   }
 
-  .activity-thumb {
-    aspect-ratio: 9 / 16;
-    min-height: 460px;
-    max-height: 560px;
+  .activity-card {
+    width: min(100%, 360px);
   }
 
   .activity-play {
@@ -2785,16 +2793,9 @@ iframe {
   width: 100%;
   max-width: 380px;
   height: 230px;
+  display: block;
+  border: 0;
   border-radius: 10px;
-  background:
-    radial-gradient(circle at 70% 40%, #f15a2a 0 6px, transparent 7px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px), #e9ecef;
-  background-size:
-    auto,
-    24px 24px,
-    24px 24px,
-    auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
