@@ -2919,12 +2919,12 @@ iframe {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   color: #f15a2a;
   border: 1px solid #f15a2a;
   border-radius: 6px;
-  font-size: 0.5rem;
+  font-size: 0.62rem;
   font-weight: 700;
 }
 
